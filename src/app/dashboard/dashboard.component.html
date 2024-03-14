@@ -1,0 +1,150 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Dashboard</mat-card-title>
+                <mat-card-subtitle>Welcome to dashboard</mat-card-subtitle>
+            </mat-card-header>
+
+        </mat-card>
+    </div>
+    <div class="container">
+        <!-- main card  -->
+        <div class="row text-center">
+
+            <!-- first  -->
+            <div class="col-sm" (click)="swalFire()">
+                <div class="row mb-3 mt-3 text-center main_card">
+                    <div class="col-4 card_logo" style="background-color: #008000;">
+                        <i class="bi bi-headphones"></i>
+                    </div>
+
+                    <div class="col card_content" style="background-color: #38b000;">
+                        <span class="card_value"> 0</span>
+                        <span class="card_subvalue"> Agent's on call</span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- second  -->
+            <div class="col-sm" (click)="swalFire()">
+                <div class="row mb-3 mt-3 text-center main_card ">
+                    <div class="col-4 card_logo" style="background-color: #49a6d4;">
+                        <i class="bi bi-clock"></i>
+                    </div>
+
+                    <div class="col card_content" style="background-color: #6ab6dc;">
+                        <span class="card_value"> 0</span>
+                        <span class="card_subvalue"> Agent's Waitting</span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- third  -->
+            <div class="col-sm" (click)="swalFire()">
+                <div class="row mb-3 mt-3 text-center main_card">
+                    <div class="col-4 card_logo" style="background-color: #7e20dc;">
+                        <i class="bi bi-hourglass"></i>
+                    </div>
+
+                    <div class="col card_content" style="background-color: #733bc8;">
+                        <span class="card_value"> 0</span>
+                        <span class="card_subvalue"> Agent's On Paused</span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- forth -->
+            <div class="col-sm">
+                <div class="row mb-3 mt-3 text-center main_card" style="cursor: no-drop;">
+                    <div class="col-4 frt_card" style="background-color: #e85d04;">
+                        <span>{{formattedMonth}}</span>
+                        <b>{{formattedDate}}</b>
+                    </div>
+
+                    <div class="col frt_content" style="background-color: #f48c06;">
+                        <span class="day_name">{{dayName}} </span>
+                        <div>
+                            <span class="time">{{formattedTime}}</span>
+                            <span class="ampm">{{amPm}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+ <!-- time chart  -->
+
+ <div class="row text-center mb-5">
+<div class="col-sm-8 col-md-8 col-lg-9">
+   
+        <img src="../../assets/chart.png" alt="" style="width: 100%;" >
+   
+</div>
+<div class="col-sm-4 col-md-4 col-lg-3">
+   
+        <img src="../../assets/chart-right.png" alt="" style="width: 100%;">
+   
+</div>
+
+ </div>
+
+
+        <!-- real time monitoring  -->
+
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-2 col-lg-2">
+                <div class="card mb-3" style="background-color: #6ab6dc; height: 180px;">
+                    <span class="mon_logo mt-2"> <i class="bi bi-brightness-high"></i></span>
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Realtime Call Monitoring</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 " *ngFor="let cardData of dataForRealTimeMonitoring" style="position: relative;">
+                <div class="card mb-3" style="height: 180px;">
+                    <div class="sub_card"><span class="sub_card_heading"> {{cardData?.value}}</span> </div>
+                    <div class="card-body text-center">
+                        <h2 class="card-title" >{{cardData?.content}}</h2>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- real time sales  -->
+
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-2 col-lg-2">
+                <div class="card mb-3" style="background-color: #6ab6dc; height: 170px;">
+                    <span class="sales_logo mt-2"> <i class="bi bi-currency-dollar"></i></span>
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Realtime Sales Monitoring</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 " *ngFor="let cardData of dataForRealSalesMonitoring" style="position: relative;">
+                <div class="card mb-3" style="height: 170px;">
+                    <div class="sub_card"><span class="sub_card_heading"> {{cardData?.value}}</span> </div>
+                    <div class="card-body text-center">
+                        <h2 class="card-title" >{{cardData?.content}}</h2>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>

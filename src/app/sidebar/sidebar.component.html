@@ -1,0 +1,160 @@
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="logo-details">
+    <i class="bx bxl-c-plus-plus icon"></i>
+    <div class="logo_name">Avinash</div>
+    <i class="bx bx-menu" id="btn" (click)="toggleSidebar()"></i>
+  </div>
+  <ul class="nav-list">
+    <!-- search  -->
+    <li>
+      <i class="bx bx-search"></i>
+      <input type="text" placeholder="Search..." />
+      <span class="tooltip">Search</span>
+    </li>
+    <!-- dashboard  -->
+    <li>
+      <a routerLink="/dashboard">
+        <i class="bx bx-grid-alt"></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+   <!-- telephonics -->
+    <li>
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages" aria-expanded="false"
+        aria-controls="pages">
+        <i class="bi bi-telephone" ></i>
+
+        <span class="links_name">Telephony</span>
+      </a>
+      <ul class="sidebar-dropdown list-unstyled collapse" id="pages" data-bs-parent="#sidebar">
+        <li>
+          <a class="ul_item" routerLink="/tasks"> User-1
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> User-2
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> User-3
+          </a>
+        </li>
+
+      </ul>
+      <span class="tooltip">Telephony</span>
+    </li>
+    
+    <!-- Setting  -->
+    <li>
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#setting" aria-expanded="false"
+        aria-controls="setting">
+        <i class="bi bi-gear"></i>
+
+        <span class="links_name">Setting </span>
+      </a>
+      <ul class="sidebar-dropdown list-unstyled collapse" id="setting" data-bs-parent="#sidebar">
+        <li>
+          <a class="ul_item" routerLink="/tasks"> Setting-1
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Setting-2
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Setting-3
+          </a>
+        </li>
+
+      </ul>
+      <span class="tooltip">Setting </span>
+    </li>
+    <!-- Call Reports  -->
+    <li>
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#callReports" aria-expanded="false"
+        aria-controls="callReports">
+        <i class="bi bi-bar-chart-line"></i>
+
+        <span class="links_name">Call Reports </span>
+      </a>
+      <ul class="sidebar-dropdown list-unstyled collapse" id="callReports" data-bs-parent="#sidebar">
+        <li>
+          <a class="ul_item" routerLink="/tasks"> Call report-1
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Call report-2
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Call report-3
+          </a>
+        </li>
+
+      </ul>
+      <span class="tooltip">Call Reports</span>
+    </li>
+    <!-- Administration -->
+    <li>
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#administration" aria-expanded="false"
+        aria-controls="administration">
+        <i class="bi bi-palette"></i>
+
+        <span class="links_name">Administration </span>
+      </a>
+      <ul class="sidebar-dropdown list-unstyled collapse" id="administration" data-bs-parent="#sidebar">
+        <li>
+          <a class="ul_item" routerLink="/tasks"> Administration-1
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Administration-2
+          </a>
+        </li>
+        <li>
+          <a class="ul_item" href="#"> Administration-3
+          </a>
+        </li>
+
+      </ul>
+      <span class="tooltip">Admindtration</span>
+    </li>
+    
+    <!-- contact  -->
+    <li>
+      <a href="#">
+        <i class="bi bi-people-fill"></i>
+        <span class="links_name">Contact</span>
+      </a>
+      <span class="tooltip">Contact</span>
+    </li>
+
+    <!-- Event  -->
+    <li>
+      <a href="#">
+        <i class="bi bi-calendar-heart"></i>
+        <span class="links_name">Event</span>
+      </a>
+      <span class="tooltip">Event</span>
+    </li>
+
+    <li class="profile">
+      <div class="profile-details">
+        <!--<img src="profile.jpg" alt="profileImg">-->
+        <div class="name_job">
+          <div class="name">Avinash Mishra</div>
+          <div class="job">Full Stack</div>
+        </div>
+      </div>
+      <i class="bx bx-log-out" id="log_out"></i>
+    </li>
+  </ul>
+</div>
+<section class="home-section" [class.open]="isSidebarOpen">
+ 
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+
+</section>
